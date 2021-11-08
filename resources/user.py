@@ -6,7 +6,7 @@ from flask_jwt_extended import (
     create_refresh_token,
     get_jwt_identity,
     jwt_required,
-    get_jwt,
+    #get_jwt,
 )
 from marshmallow import ValidationError
 from models.user import UserModel
@@ -81,9 +81,9 @@ class UserLogout(Resource):
     @classmethod
     @jwt_required()
     def post(cls):
-        jti = get_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
+        #jti = get_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
         user_id = get_jwt_identity()
-        BLOCKLIST.add(jti)
+        #BLOCKLIST.add(jti)
         return {"message": USER_LOGGED_OUT.format(user_id)}, 200
 
 

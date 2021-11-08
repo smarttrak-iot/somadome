@@ -4,6 +4,7 @@ from flask_jwt_extended import JWTManager
 
 from db import db
 from ma import ma
+#from blocklist import BLOCKLIST
 from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout
 
 app = Flask(__name__)
@@ -14,7 +15,9 @@ app.secret_key = "somadome"  # could do app.config['JWT_SECRET_KEY'] if we prefe
 api = Api(app)
 
 
-
+#@app.before_first_request
+##def create_tables():
+#    db.create_all()
 
 
 jwt = JWTManager(app)
