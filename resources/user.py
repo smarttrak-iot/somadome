@@ -77,14 +77,14 @@ class UserLogin(Resource):
         return {"message": INVALID_CREDENTIALS}, 401
 
 
-class UserLogout(Resource):
-    @classmethod
-    @jwt_required()
-    def post(cls):
+#class UserLogout(Resource):
+#    @classmethod
+#    @jwt_required()
+#    def post(cls):
         #jti = get_jwt()["jti"]  # jti is "JWT ID", a unique identifier for a JWT.
-        user_id = get_jwt_identity()
+#        user_id = get_jwt_identity()
         #BLOCKLIST.add(jti)
-        return {"message": USER_LOGGED_OUT.format(user_id)}, 200
+#        return {"message": USER_LOGGED_OUT.format(user_id)}, 200
 
 
 class TokenRefresh(Resource):
