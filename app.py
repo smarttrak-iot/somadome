@@ -14,9 +14,7 @@ app.secret_key = "somadome"  # could do app.config['JWT_SECRET_KEY'] if we prefe
 api = Api(app)
 
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+
 
 
 jwt = JWTManager(app)
