@@ -14,6 +14,7 @@ from schemas.user import UserSchema
 
 
 USER_ALREADY_EXISTS = "A user with that username already exists."
+USER_EMAIL_EXISTS = "A user with this email already exists."
 CREATED_SUCCESSFULLY = "User created successfully."
 USER_NOT_FOUND = "User not found."
 USER_DELETED = "User deleted."
