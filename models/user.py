@@ -8,6 +8,22 @@ class UserModel(db.Model):
     username = db.Column(db.String(80), nullable=False, unique=True)
     password = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(80), nullable=False, unique=True)
+    displayname = db.Column(db.String(80), nullable=True)
+    headline = db.Column(db.String(80), nullable=True)
+    firstName = db.Column(db.String(80), nullable=True)
+    middleInitial = db.Column(db.String(80), nullable=True)
+    lastName = db.Column(db.String(80), nullable=True)
+    suffix = db.Column(db.String(80), nullable=True)
+    phone = db.Column(db.String(80), nullable=True)
+    address1 = db.Column(db.String(80), nullable=True)
+    address2 = db.Column(db.String(80), nullable=True)
+    city = db.Column(db.String(80), nullable=True)
+    state = db.Column(db.String(80), nullable=True)
+    zip = db.Column(db.String(80), nullable=True)
+    joinDate = db.Column(db.Date, nullable=True)
+    birthDate = db.Column(db.Date, nullable=True)
+
+
 
     @classmethod
     def find_by_username(cls, username: str) -> "UserModel":
